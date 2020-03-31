@@ -1,0 +1,11 @@
+version: '2'
+services:
+  equitypursuit-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/EquityPursuit/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=EquityPursuit
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
