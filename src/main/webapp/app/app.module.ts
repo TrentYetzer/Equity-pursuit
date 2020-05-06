@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import './vendor';
 import { EquityPursuitSharedModule } from 'app/shared/shared.module';
@@ -7,6 +8,9 @@ import { EquityPursuitCoreModule } from 'app/core/core.module';
 import { EquityPursuitAppRoutingModule } from './app-routing.module';
 import { EquityPursuitHomeModule } from './home/home.module';
 import { EquityPursuitEntityModule } from './entities/entity.module';
+import { GameModule } from './game/game.module';
+import { PerformanceModule } from './performance/performance.module';
+import { ProfileModule } from './profile/profile.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -23,7 +27,11 @@ import { ErrorComponent } from './layouts/error/error.component';
     EquityPursuitHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     EquityPursuitEntityModule,
-    EquityPursuitAppRoutingModule
+    EquityPursuitAppRoutingModule,
+    GameModule,
+    PerformanceModule,
+    ProfileModule,
+    ReactiveFormsModule
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent]

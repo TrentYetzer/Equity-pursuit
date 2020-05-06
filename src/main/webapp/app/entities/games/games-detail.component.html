@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="games">
+            <h2><span jhiTranslate="equityPursuitApp.games.detail.title">Games</span> {{ games.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="equityPursuitApp.games.playtime">Playtime</span></dt>
+                <dd>
+                    <span>{{ games.playtime }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.games.listingList">Listing List</span></dt>
+                <dd>
+                    <span>{{ games.listingList }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.games.score">Score</span></dt>
+                <dd>
+                    <span>{{ games.score }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.games.time">Time</span></dt>
+                <dd>
+                    <span>{{ games.time }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.games.user">User</span></dt>
+                <dd>
+                    {{ games.user?.login }}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/games', games.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-hints-heading" jhiTranslate="equityPursuitApp.hints.home.createOrEditLabel">Create or edit a Hints</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.hints.hint" for="field_hint">Hint</label>
+                    <input type="text" class="form-control" name="hint" id="field_hint"
+                           formControlName="hint"/>
+                    <div *ngIf="editForm.get('hint')!.invalid && (editForm.get('hint')!.dirty || editForm.get('hint')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('hint')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.hints.modifier" for="field_modifier">Modifier</label>
+                    <input type="number" class="form-control" name="modifier" id="field_modifier"
+                           formControlName="modifier"/>
+                    <div *ngIf="editForm.get('modifier')!.invalid && (editForm.get('modifier')!.dirty || editForm.get('modifier')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modifier')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('modifier')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.hints.listings" for="field_listings">Listings</label>
+                    <select class="form-control" id="field_listings" name="listings" formControlName="listings">
+                        <option *ngIf="!editForm.get('listings')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="listingsOption.id === editForm.get('listings')!.value?.id ? editForm.get('listings')!.value : listingsOption" *ngFor="let listingsOption of listings; trackBy: trackById">{{ listingsOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('listings')!.invalid && (editForm.get('listings')!.dirty || editForm.get('listings')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('listings')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

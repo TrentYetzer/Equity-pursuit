@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="listings">
+            <h2><span jhiTranslate="equityPursuitApp.listings.detail.title">Listings</span> {{ listings.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="equityPursuitApp.listings.zpid">Zpid</span></dt>
+                <dd>
+                    <span>{{ listings.zpid }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.street">Street</span></dt>
+                <dd>
+                    <span>{{ listings.street }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.city">City</span></dt>
+                <dd>
+                    <span>{{ listings.city }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.state">State</span></dt>
+                <dd>
+                    <span>{{ listings.state }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.zipCode">Zip Code</span></dt>
+                <dd>
+                    <span>{{ listings.zipCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.zestimate">Zestimate</span></dt>
+                <dd>
+                    <span>{{ listings.zestimate }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.address">Address</span></dt>
+                <dd>
+                    <span>{{ listings.address }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{ listings.longitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.listings.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{ listings.latitude }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/listings', listings.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

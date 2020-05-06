@@ -1,0 +1,162 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-listings-heading" jhiTranslate="equityPursuitApp.listings.home.createOrEditLabel">Create or edit a Listings</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.zpid" for="field_zpid">Zpid</label>
+                    <input type="number" class="form-control" name="zpid" id="field_zpid"
+                           formControlName="zpid"/>
+                    <div *ngIf="editForm.get('zpid')!.invalid && (editForm.get('zpid')!.dirty || editForm.get('zpid')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('zpid')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('zpid')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.street" for="field_street">Street</label>
+                    <input type="text" class="form-control" name="street" id="field_street"
+                           formControlName="street"/>
+                    <div *ngIf="editForm.get('street')!.invalid && (editForm.get('street')!.dirty || editForm.get('street')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('street')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                    <div *ngIf="editForm.get('city')!.invalid && (editForm.get('city')!.dirty || editForm.get('city')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('city')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.state" for="field_state">State</label>
+                    <input type="text" class="form-control" name="state" id="field_state"
+                           formControlName="state"/>
+                    <div *ngIf="editForm.get('state')!.invalid && (editForm.get('state')!.dirty || editForm.get('state')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('state')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.zipCode" for="field_zipCode">Zip Code</label>
+                    <input type="number" class="form-control" name="zipCode" id="field_zipCode"
+                           formControlName="zipCode"/>
+                    <div *ngIf="editForm.get('zipCode')!.invalid && (editForm.get('zipCode')!.dirty || editForm.get('zipCode')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('zipCode')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('zipCode')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.zestimate" for="field_zestimate">Zestimate</label>
+                    <input type="number" class="form-control" name="zestimate" id="field_zestimate"
+                           formControlName="zestimate"/>
+                    <div *ngIf="editForm.get('zestimate')!.invalid && (editForm.get('zestimate')!.dirty || editForm.get('zestimate')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('zestimate')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('zestimate')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('zestimate')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.address" for="field_address">Address</label>
+                    <input type="number" class="form-control" name="address" id="field_address"
+                           formControlName="address"/>
+                    <div *ngIf="editForm.get('address')!.invalid && (editForm.get('address')!.dirty || editForm.get('address')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('address')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('address')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.longitude" for="field_longitude">Longitude</label>
+                    <input type="number" class="form-control" name="longitude" id="field_longitude"
+                           formControlName="longitude"/>
+                    <div *ngIf="editForm.get('longitude')!.invalid && (editForm.get('longitude')!.dirty || editForm.get('longitude')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('longitude')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('longitude')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="equityPursuitApp.listings.latitude" for="field_latitude">Latitude</label>
+                    <input type="number" class="form-control" name="latitude" id="field_latitude"
+                           formControlName="latitude"/>
+                    <div *ngIf="editForm.get('latitude')!.invalid && (editForm.get('latitude')!.dirty || editForm.get('latitude')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('latitude')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('latitude')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

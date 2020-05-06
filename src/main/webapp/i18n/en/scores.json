@@ -1,0 +1,23 @@
+{
+  "equityPursuitApp": {
+    "scores": {
+      "home": {
+        "title": "Scores",
+        "createLabel": "Create a new Scores",
+        "createOrEditLabel": "Create or edit a Scores",
+        "notFound": "No Scores found"
+      },
+      "created": "A new Scores is created with identifier {{ param }}",
+      "updated": "A Scores is updated with identifier {{ param }}",
+      "deleted": "A Scores is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Scores {{ id }}?"
+      },
+      "detail": {
+        "title": "Scores"
+      },
+      "score": "Score",
+      "games": "Games"
+    }
+  }
+}

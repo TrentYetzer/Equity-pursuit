@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "games"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "playtime",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "listingList",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "score",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20200403173445",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "games",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "no"
+}

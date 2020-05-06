@@ -1,0 +1,114 @@
+.map-container {
+  height: 60vh;
+}
+
+.position {
+  border: 2px solid black;
+  padding: 5px;
+  margin-top: -2px;
+}
+
+.button-container {
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.hints {
+  margin: 10px 0px;
+}
+
+.finished {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hints h3 {
+  border-bottom: 3px solid black;
+  width: 70px;
+}
+
+@media (max-width: 768px) {
+  form {
+    font-size: large;
+  }
+  .address {
+    font-size: medium;
+  }
+}
+
+@media (min-width: 769px) {
+  form {
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+li {
+  font-size: larger;
+  font-weight: 400;
+}
+
+.btn {
+  position: relative;
+  margin: 2em 0;
+  text-align: center;
+  font-size: 2em;
+  padding: 0.4em;
+  cursor: pointer;
+  border: 2px solid black;
+  outline: none;
+  color: black;
+  background-color: transparent;
+  white-space: nowrap;
+  font-family: 'Tomorrow', sans-serif;
+}
+.btn--border::after,
+.btn--border::before,
+.btn--border span::after,
+.btn--border span::before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  transition: 0.5s ease;
+}
+.btn--border::after,
+.btn--border::before {
+  height: 100%;
+  width: 2px;
+  top: 0px;
+}
+.btn--border::after {
+  left: -2px;
+}
+.btn--border::before {
+  right: -2px;
+}
+.btn--border span::after,
+.btn--border span::before {
+  height: 2px;
+  width: 100%;
+  left: -2px;
+}
+.btn--border span::after {
+  top: -2px;
+}
+.btn--border span::before {
+  bottom: -2px;
+}
+.btn--border:hover:after {
+  transform: translatex(-12px);
+}
+.btn--border:hover:before {
+  transform: translatex(12px);
+}
+.btn--border:hover span::after {
+  transform: translatey(-12px);
+}
+.btn--border:hover span::before {
+  transform: translatey(12px);
+}

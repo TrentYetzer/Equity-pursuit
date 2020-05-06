@@ -1,0 +1,82 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "zpid",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "street",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "zestimate",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20200331203433",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "listings",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "no"
+}

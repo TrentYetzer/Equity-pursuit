@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "listings",
+            "otherEntityName": "listings",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "hints"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "hint",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "modifier",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20200331210139",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "hints",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": true,
+    "pagination": "no"
+}

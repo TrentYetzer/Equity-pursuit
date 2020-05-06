@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="equityPursuitApp.listings.home.title">Listings</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-listings" [routerLink]="['/listings/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="equityPursuitApp.listings.home.createLabel">
+            Create a new Listings
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="listings?.length === 0">
+        <span jhiTranslate="equityPursuitApp.listings.home.notFound">No listings found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="listings?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.zpid">Zpid</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.street">Street</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.city">City</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.state">State</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.zipCode">Zip Code</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.zestimate">Zestimate</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.address">Address</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.longitude">Longitude</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.listings.latitude">Latitude</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let listings of listings ;trackBy: trackId">
+                    <td><a [routerLink]="['/listings', listings.id, 'view']">{{ listings.id }}</a></td>
+                    <td>{{ listings.zpid }}</td>
+                    <td>{{ listings.street }}</td>
+                    <td>{{ listings.city }}</td>
+                    <td>{{ listings.state }}</td>
+                    <td>{{ listings.zipCode }}</td>
+                    <td>{{ listings.zestimate }}</td>
+                    <td>{{ listings.address }}</td>
+                    <td>{{ listings.longitude }}</td>
+                    <td>{{ listings.latitude }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/listings', listings.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/listings', listings.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(listings)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

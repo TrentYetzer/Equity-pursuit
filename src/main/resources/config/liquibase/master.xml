@@ -14,6 +14,13 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331184529_added_entity_Scores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331203433_added_entity_Listings.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331210139_added_entity_Hints.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200403173445_added_entity_Games.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200331184529_added_entity_constraints_Scores.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200331210139_added_entity_constraints_Hints.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200403173445_added_entity_constraints_Games.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

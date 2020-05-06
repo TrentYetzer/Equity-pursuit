@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="scores">
+            <h2><span jhiTranslate="equityPursuitApp.scores.detail.title">Scores</span> {{ scores.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="equityPursuitApp.scores.score">Score</span></dt>
+                <dd>
+                    <span>{{ scores.score }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.scores.games">Games</span></dt>
+                <dd>
+                    <div *ngIf="scores.games">
+                        <a [routerLink]="['/games', scores.games?.id, 'view']">{{ scores.games?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scores', scores.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div *ngIf="showInProgress">
+  <form [formGroup]="gameForm" (ngSubmit)="onSubmit(guess.value)">
+    <div>
+      <label for="guess"><strong>Guess the price: $</strong></label>
+      <input #guess formControlName="guess" id="guess" type="number" [(ngModel)]="inputBox" />
+    </div>
+    <h3 class="position">{{ position + 1 }} out of 5</h3>
+    <div class="button-container">
+      <button class="main-button" type="button" (click)="hintButton()" [disabled]="hints.length === 0">Get Hint</button>
+      <button class="main-button" type="submit" [disabled]="!gameForm.valid">Submit</button>
+    </div>
+  </form>
+  <div class="address">
+    <h3>
+      {{ playlist[position].address }} {{ playlist[position].street }} {{ playlist[position].city }} , {{ playlist[position].state }}
+      {{ playlist[position].zipCode }}
+    </h3>
+  </div>
+  <hr />
+</div>
+<div class="finished" *ngIf="showFinished">
+  <h1>
+    Congrats, you finished with <strong>{{ finalScore }}</strong>
+  </h1>
+  <button class="btn btn--border" (click)="playAgain()">Play Again<span></span></button>
+</div>
+<div class="map-container" *ngIf="showMap">
+  <google-map height="100%" width="100%" [zoom]="zoom" [center]="center">
+    <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [title]="marker.title" [options]="marker.options">
+    </map-marker>
+  </google-map>
+</div>
+<div *ngIf="showInProgress" class="hints">
+  <h3><strong>Hints</strong></h3>
+  <li *ngFor="let hint of displayHints">{{ hint }}</li>
+</div>

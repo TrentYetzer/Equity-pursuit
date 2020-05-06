@@ -1,0 +1,26 @@
+{
+  "equityPursuitApp": {
+    "games": {
+      "home": {
+        "title": "Games",
+        "createLabel": "Create a new Games",
+        "createOrEditLabel": "Create or edit a Games",
+        "notFound": "No Games found"
+      },
+      "created": "A new Games is created with identifier {{ param }}",
+      "updated": "A Games is updated with identifier {{ param }}",
+      "deleted": "A Games is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Games {{ id }}?"
+      },
+      "detail": {
+        "title": "Games"
+      },
+      "playtime": "Playtime",
+      "listingList": "Listing List",
+      "score": "Score",
+      "time": "Time",
+      "user": "User"
+    }
+  }
+}

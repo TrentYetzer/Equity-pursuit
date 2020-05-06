@@ -1,0 +1,30 @@
+{
+  "equityPursuitApp": {
+    "listings": {
+      "home": {
+        "title": "Listings",
+        "createLabel": "Create a new Listings",
+        "createOrEditLabel": "Create or edit a Listings",
+        "notFound": "No Listings found"
+      },
+      "created": "A new Listings is created with identifier {{ param }}",
+      "updated": "A Listings is updated with identifier {{ param }}",
+      "deleted": "A Listings is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Listings {{ id }}?"
+      },
+      "detail": {
+        "title": "Listings"
+      },
+      "zpid": "Zpid",
+      "street": "Street",
+      "city": "City",
+      "state": "State",
+      "zipCode": "Zip Code",
+      "zestimate": "Zestimate",
+      "address": "Address",
+      "longitude": "Longitude",
+      "latitude": "Latitude"
+    }
+  }
+}

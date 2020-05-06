@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="hints">
+            <h2><span jhiTranslate="equityPursuitApp.hints.detail.title">Hints</span> {{ hints.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="equityPursuitApp.hints.hint">Hint</span></dt>
+                <dd>
+                    <span>{{ hints.hint }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.hints.modifier">Modifier</span></dt>
+                <dd>
+                    <span>{{ hints.modifier }}</span>
+                </dd>
+                <dt><span jhiTranslate="equityPursuitApp.hints.listings">Listings</span></dt>
+                <dd>
+                    <div *ngIf="hints.listings">
+                        <a [routerLink]="['/listings', hints.listings?.id, 'view']">{{ hints.listings?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/hints', hints.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

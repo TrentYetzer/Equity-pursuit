@@ -1,0 +1,24 @@
+{
+  "equityPursuitApp": {
+    "hints": {
+      "home": {
+        "title": "Hints",
+        "createLabel": "Create a new Hints",
+        "createOrEditLabel": "Create or edit a Hints",
+        "notFound": "No Hints found"
+      },
+      "created": "A new Hints is created with identifier {{ param }}",
+      "updated": "A Hints is updated with identifier {{ param }}",
+      "deleted": "A Hints is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hints {{ id }}?"
+      },
+      "detail": {
+        "title": "Hints"
+      },
+      "hint": "Hint",
+      "modifier": "Modifier",
+      "listings": "Listings"
+    }
+  }
+}

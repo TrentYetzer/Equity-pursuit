@@ -14,6 +14,21 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
     RouterModule.forRoot(
       [
         {
+          path: 'game',
+          redirectTo: '/game',
+          pathMatch: 'full'
+        },
+        {
+          path: 'performance',
+          redirectTo: '/performance',
+          pathMatch: 'full'
+        },
+        {
+          path: 'profile',
+          redirectTo: '/profile',
+          pathMatch: 'full'
+        },
+        {
           path: 'admin',
           data: {
             authorities: [Authority.ADMIN]

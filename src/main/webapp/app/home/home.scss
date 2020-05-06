@@ -2,12 +2,30 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_3.svg') no-repeat center top;
-  background-size: contain;
+.hero {
+  position: absolute !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  top: -20px;
+  left: 0px;
+  z-index: -0;
+  height: calc(100vh - 62px) !important;
+  width: 100vw !important;
+  background: url('../../content/images/House.png') no-repeat;
+  filter: brightness(50%);
+}
+
+.hero-text {
+  color: white;
+  z-index: 1;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hero-text h1 {
+  font-size: 5em;
+  font-weight: 600;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -17,7 +35,66 @@ Main page styles
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .hipster {
-    background: url('../../content/images/jhipster_family_member_3.svg') no-repeat center top;
-    background-size: contain;
+    background: url('../../content/images/House.png') no-repeat center top;
   }
+}
+
+.btn {
+  position: relative;
+  margin: 2em 0;
+  text-align: center;
+  font-size: 2em;
+  padding: 0.4em;
+  cursor: pointer;
+  border: 2px solid white;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  white-space: nowrap;
+  font-family: 'Tomorrow', sans-serif;
+}
+.btn--border::after,
+.btn--border::before,
+.btn--border span::after,
+.btn--border span::before {
+  content: '';
+  position: absolute;
+  background-color: white;
+  transition: 0.5s ease;
+}
+.btn--border::after,
+.btn--border::before {
+  height: 100%;
+  width: 2px;
+  top: 0px;
+}
+.btn--border::after {
+  left: -2px;
+}
+.btn--border::before {
+  right: -2px;
+}
+.btn--border span::after,
+.btn--border span::before {
+  height: 2px;
+  width: 100%;
+  left: -2px;
+}
+.btn--border span::after {
+  top: -2px;
+}
+.btn--border span::before {
+  bottom: -2px;
+}
+.btn--border:hover:after {
+  transform: translatex(-12px);
+}
+.btn--border:hover:before {
+  transform: translatex(12px);
+}
+.btn--border:hover span::after {
+  transform: translatey(-12px);
+}
+.btn--border:hover span::before {
+  transform: translatey(12px);
 }

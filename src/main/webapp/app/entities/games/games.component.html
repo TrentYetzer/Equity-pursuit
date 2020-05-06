@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="equityPursuitApp.games.home.title">Games</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-games" [routerLink]="['/games/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="equityPursuitApp.games.home.createLabel">
+            Create a new Games
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="games?.length === 0">
+        <span jhiTranslate="equityPursuitApp.games.home.notFound">No games found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="games?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.games.playtime">Playtime</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.games.listingList">Listing List</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.games.score">Score</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.games.time">Time</span></th>
+                    <th scope="col" ><span jhiTranslate="equityPursuitApp.games.user">User</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let games of games ;trackBy: trackId">
+                    <td><a [routerLink]="['/games', games.id, 'view']">{{ games.id }}</a></td>
+                    <td>{{ games.playtime }}</td>
+                    <td>{{ games.listingList }}</td>
+                    <td>{{ games.score }}</td>
+                    <td>{{ games.time | date:'medium' }}</td>
+                    <td>
+                        {{ games.user?.login }}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/games', games.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/games', games.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(games)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
